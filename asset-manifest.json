@@ -1,16 +1,17 @@
 {
   "files": {
     "main.css": "/IMBY/static/css/main.f855e6bc.css",
-    "main.js": "/IMBY/static/js/main.c24e4450.js",
+    "main.js": "/IMBY/static/js/main.e72eecb2.js",
     "static/js/453.3423ceb3.chunk.js": "/IMBY/static/js/453.3423ceb3.chunk.js",
+    "static/media/cow.jpg": "/IMBY/static/media/cow.b78c7a79e53d150bce31.jpg",
     "static/media/logo.svg": "/IMBY/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/IMBY/index.html",
     "main.f855e6bc.css.map": "/IMBY/static/css/main.f855e6bc.css.map",
-    "main.c24e4450.js.map": "/IMBY/static/js/main.c24e4450.js.map",
+    "main.e72eecb2.js.map": "/IMBY/static/js/main.e72eecb2.js.map",
     "453.3423ceb3.chunk.js.map": "/IMBY/static/js/453.3423ceb3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.c24e4450.js"
+    "static/js/main.e72eecb2.js"
   ]
 }
