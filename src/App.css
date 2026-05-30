@@ -45,14 +45,15 @@
   height: 48px;
 }
 
-
+.chevronDown {
+  padding-top: 10px;
+}
 
 .nav-links {
   display: flex;
-  gap: 22px;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 1%;
   font-weight: bold;
   font-size: larger;
   align-items: center;
@@ -79,14 +80,6 @@
 @media (max-width: 800px) {
   .nav-links {
     display: none;
-    position: absolute;
-    top: 72px;
-    left: 0;
-    right: 0;
-    background: white;
-    flex-direction: column;
-    padding: 10px 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
   }
 
   .nav-links.open {
@@ -99,6 +92,9 @@
 
   .center-logo {
     height: 40px;
+  }
+  .buy-button{
+    display: none;
   }
 }
 
