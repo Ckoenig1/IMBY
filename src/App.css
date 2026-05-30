@@ -1,3 +1,108 @@
+/* Top navigation bar */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0.00));
+  z-index: 1000;
+}
+
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #0b2640;
+  border-radius: 2px;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.center-logo {
+  height: 48px;
+}
+
+
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: larger;
+  align-items: center;
+}
+
+.nav-links li {
+  color: #0b2640;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.buy-button {
+  background: #b71c1c;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 2px 4px rgba(183,28,28,0.25);
+}
+
+/* Responsive behavior */
+@media (max-width: 800px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-right {
+    gap: 10px;
+  }
+
+  .center-logo {
+    height: 40px;
+  }
+}
+
+/* App existing styles adjusted to account for fixed topbar */
 .App {
   text-align: center;
 }
@@ -15,7 +120,8 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: calc(100vh - 72px);
+  padding-top: 92px;
   display: flex;
   flex-direction: column;
   align-items: center;
