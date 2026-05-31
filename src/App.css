@@ -1,16 +1,17 @@
 /* Top navigation bar */
 .topbar {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
-  height: 20%;
+  height: 22vh;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 0 20px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0.00));
-  z-index: 1000;
+  background: linear-gradient(180deg, hsla(44.44,100%,94.71%, .45), hsla(44.44,100%,94.71%, 0) );
+  z-index: 1;
 }
 
 
@@ -41,10 +42,62 @@
   padding-right: 2%;
 }
 
+.slideBox{
+  position: absolute;
+  top:0;
+  width:100%;
+  height:0%;
+  background: white;
+  z-index: 1;
+  transition: height 0.3s ease-out;
+}
+
+.slideBox.open{
+  height: 100%;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  padding: 10px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity .3s ease-out .3s;
+}
+.nav-left{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40%;
+}
+
+
+.nav-right{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+   width: 40%;
+}
+
+.dropdown.open{
+  opacity: 1;
+}
 .center-logo {
   height: 48px;
 }
-
+.topContainer{
+  position: absolute;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+}
 .chevronDown {
   padding-top: 10px;
 }

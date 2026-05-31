@@ -3,7 +3,7 @@ import chevron_down from '../pics/chevron_down.svg'
 
 const MenuItem = (props) => {
   return (
-     <div className='nav-links'>
+     <div className='nav-links' onMouseEnter={props.onHover}>
         <div>
             {props.label}
         </div>
