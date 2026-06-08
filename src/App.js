@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
-import cow from './cow.jpg'
+import cow from './cow.jpg';
+import camping from './assets/camping.jpg';
+import lineup from './assets/lineup.jpg';
+import volunteer from './assets/volunteer.jpeg';
 import MenuItem from './components/menuItem';
 import DropDown from './components/dropDown';
 import If from './components/If';
@@ -118,24 +121,32 @@ function App() {
         </video>
       </div>
       <div className={"body-container"}>
-        <div className="body-item" style={{backgroundColor: "hsla(211.11,100%,10.59%,1)", gridArea: "box-1"}}>
-          item1
+        <div className="body-item hero-panel" style={{backgroundColor: "hsla(211.11,100%,10.59%,1)", gridArea: "box-1"}}>
+          <div className="body-item-content hero-title">DISCOVER GREAT MUSIC IN THE GREAT OUTDOORS</div>
+          <div className="body-item-content hero-subtitle">Izaak Walton League | Gaithersburg, Maryland</div>
+          <div className="body-item-content hero-date">October 17-18, 2026</div>
         </div> 
-        <div className="body-item" style={{gridArea: "box-2"}}>
-          item2
+        <div className="body-item image-card" style={{gridArea: "box-3"}}>
+          <img src={lineup} className="image-card-photo" alt="2026 lineup" />
+          <div className="body-item-content">
+            2026 LINEUP
+          </div>
         </div> 
-        <div className="body-item" style={{gridArea: "box-3"}}>
-          item3
+        <div className="body-item image-card" style={{gridArea: "box-4"}}>
+          <img src={camping} className="image-card-photo" alt="Camping and lodging" />
+          <div className="body-item-content">
+            CAMPING & LODGING
+          </div>
         </div> 
-        <div className="body-item" style={{gridArea: "box-4"}}>
-          item4
-        </div> 
-        <div className="body-item" style={{gridArea: "box-5"}}>
-          item5
+        <div className="body-item image-card" style={{gridArea: "box-5"}}>
+          <img src={volunteer} className="image-card-photo" alt="Volunteer at IMBY" />
+          <div className="body-item-content">
+            VOLUNTEER AT IMBY
+          </div>
         </div> 
         <div className="body-item countdown-box" style={{backgroundColor: "hsla(35.09,100%,68.82%,1)", gridArea: "box-6"}}>
           <div className="countdown-label">Days Till IMBY</div>
-          <div className="countdown-value">{countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s</div>
+          <div className="countdown-value">{countdown.days} days {countdown.hours} hours {countdown.minutes} minutes {countdown.seconds} seconds</div>
         </div> 
         <div className="body-item" style={{gridArea: "box-7"}}>
           item7
