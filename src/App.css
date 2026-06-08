@@ -251,6 +251,27 @@
   "box-9 box-9 box-9 box-9 box-9 box-9"
   "box-10 box-10 box-10 box-10 box-10 box-10";
 }
+
+@media (max-width: 650px) {
+  .body-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 400px 300px 200px 200px 200px 200px;
+    grid-template-areas:
+      "box-1"
+      "box-3"
+      "box-4"
+      "box-5"
+      "box-6"
+      "box-7"
+      "box-8"
+      "box-9"
+      "box-10";
+  }
+
+  .body-item {
+    min-height: 240px;
+  }
+}
 .body-item-content{
   text-align: center;
   position: relative;
