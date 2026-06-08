@@ -212,18 +212,28 @@
 
 .video-unmute-button {
   position: absolute;
-  top: 16px;
   right: 16px;
+  bottom: 16px;
+  top: auto;
   z-index: 1;
   pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   border: none;
   border-radius: 999px;
-  padding: 8px 12px;
+  padding: 0;
   background: rgba(11, 38, 64, 0.85);
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.mute-icon {
+  width: 20px;
+  height: 20px;
+  filter: invert(1) brightness(1.2);
 }
 
 .body-container {

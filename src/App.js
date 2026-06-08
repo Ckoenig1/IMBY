@@ -5,6 +5,8 @@ import MenuItem from './components/menuItem';
 import DropDown from './components/dropDown';
 import If from './components/If';
 import imbyVideo from './assets/imbyVideo.mp4';
+import volumeOff from './assets/volumeOff.svg';
+import volumeOn from './assets/volumeOn.svg';
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -62,8 +64,13 @@ function App() {
           className="video-unmute-button"
           onClick={handleToggleMute}
           aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+          title={isMuted ? 'Unmute video' : 'Mute video'}
         >
-          {isMuted ? 'Unmute video' : 'Mute video'}
+          <img
+            src={isMuted ? volumeOff : volumeOn}
+            alt={isMuted ? 'Muted' : 'Unmuted'}
+            className="mute-icon"
+          />
         </button>
         <video
           ref={videoRef}
