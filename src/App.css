@@ -204,7 +204,7 @@
 .background-video {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
   position: relative;
   z-index: 0;
