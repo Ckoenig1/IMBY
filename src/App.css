@@ -255,7 +255,7 @@
 @media (max-width: 650px) {
   .body-container {
     grid-template-columns: 1fr;
-    grid-template-rows: 400px 200px 200px 200px 200px 200px;
+    grid-template-rows: 400px 200px 200px 200px 200px 200px 200px 200px 200px;
     grid-template-areas:
       "box-1"
       "box-3"
@@ -266,10 +266,6 @@
       "box-8"
       "box-9"
       "box-10";
-  }
-
-  .body-item {
-    min-height: 240px;
   }
 }
 .body-item-content{
@@ -396,4 +392,27 @@
   margin-top: 0.5rem;
   font-size: 1.4rem;
   font-weight: 800;
+}
+
+@media (max-width: 650px) {
+  .body-item {
+    min-height: 160px;
+    padding: 0.25rem;
+  }
+
+  .countdown-box {
+    padding: 0;
+  }
+
+  .countdown-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+  }
+
+  .countdown-value {
+    margin-top: 0.15rem;
+    font-size: 0.72rem;
+    line-height: 1.02;
+    word-break: break-word;
+  }
 }
