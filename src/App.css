@@ -191,3 +191,59 @@
     transform: rotate(360deg);
   }
 }
+.video-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.background-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
+}
+
+.video-unmute-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+  pointer-events: auto;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(11, 38, 64, 0.85);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.body-container {
+  position:relative;
+  width:100%;
+  display:grid;
+  z-index: 0;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(7, 200px);
+  grid-template-areas:
+  "box-1 box-1 box-1 box-1 box-1 box-1"
+  "box-2 box-2 box-2 box-2 box-2 box-2"
+  "box-3 box-3 box-4 box-4 box-5 box-5"
+  "box-6 box-6 box-6 box-6 box-6 box-6"
+  "box-7 box-7 box-7 box-8 box-8 box-8"
+  "box-9 box-9 box-9 box-9 box-9 box-9"
+  "box-10 box-10 box-10 box-10 box-10 box-10";
+}
+
+.body-item {
+  padding: 2em;
+  background-color: blue
+}

@@ -1,15 +1,34 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React, { useRef, useState } from 'react';
 import './App.css';
 import cow from './cow.jpg'
 import MenuItem from './components/menuItem';
 import DropDown from './components/dropDown';
 import If from './components/If';
+import imbyVideo from './assets/imbyVideo.mp4';
 
 function App() {
   const [open, setOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState("None");
-  console.log("dropdownOpen:", dropdownOpen);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
+
+  const handleToggleMute = async () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const nextMuted = !isMuted;
+    video.muted = nextMuted;
+    setIsMuted(nextMuted);
+
+    if (!nextMuted) {
+      try {
+        await video.play();
+      } catch (error) {
+        console.warn('Video play on unmute failed:', error);
+      }
+    }
+  };
+
   return (
     <div className="App">
       <div className="topContainer">
@@ -37,9 +56,65 @@ function App() {
         </div>
         <DropDown displayType={dropdownOpen} />
       </div>
-      <header className="App-header">
-        <img src={cow} style={{ padding: "100px" }} className="App-logo" alt="logo" />      
-      </header>
+      <div className="video-container">
+        <button
+          type="button"
+          className="video-unmute-button"
+          onClick={handleToggleMute}
+          aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+        >
+          {isMuted ? 'Unmute video' : 'Mute video'}
+        </button>
+        <video
+          ref={videoRef}
+          autoPlay
+          muted={isMuted}
+          loop
+          playsInline
+          preload="auto"
+          className="background-video"
+          onClick={handleToggleMute}
+          onCanPlay={() => {
+            if (videoRef.current && videoRef.current.paused) {
+              videoRef.current.play().catch(() => {});
+            }
+          }}
+        >
+          <source src={imbyVideo} type="video/mp4" />
+        </video>
+      </div>
+      <div className={"body-container"}>
+        <div className="body-item" style={{backgroundColor: "hsla(211.11,100%,10.59%,1)", gridArea: "box-1"}}>
+          item1
+        </div> 
+        <div className="body-item" style={{gridArea: "box-2"}}>
+          item2
+        </div> 
+        <div className="body-item" style={{gridArea: "box-3"}}>
+          item3
+        </div> 
+        <div className="body-item" style={{gridArea: "box-4"}}>
+          item4
+        </div> 
+        <div className="body-item" style={{gridArea: "box-5"}}>
+          item5
+        </div> 
+        <div className="body-item" style={{gridArea: "box-6"}}>
+          item6
+        </div> 
+        <div className="body-item" style={{gridArea: "box-7"}}>
+          item7
+        </div> 
+        <div className="body-item" style={{gridArea: "box-8"}}>
+          item8
+        </div>
+        <div className="body-item" style={{gridArea: "box-9"}}>
+          item9
+        </div> 
+        <div className="body-item" style={{gridArea: "box-10"}}>
+          item10
+        </div>
+      </div>
     </div>
   );
 }

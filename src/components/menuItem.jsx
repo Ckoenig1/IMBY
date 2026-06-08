@@ -1,5 +1,5 @@
 import React from 'react';
-import chevron_down from '../pics/chevron_down.svg'
+import chevron_down from '../assets/chevron_down.svg'
 
 const MenuItem = (props) => {
   return (
