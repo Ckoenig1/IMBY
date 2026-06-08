@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import cow from './cow.jpg'
 import MenuItem from './components/menuItem';
@@ -12,7 +12,34 @@ function App() {
   const [open, setOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState("None");
   const [isMuted, setIsMuted] = useState(true);
+  const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const videoRef = useRef(null);
+
+  useEffect(() => {
+    const targetDate = new Date('2026-10-17T00:00:00');
+
+    const updateCountdown = () => {
+      const now = new Date();
+      const diff = targetDate.getTime() - now.getTime();
+
+      if (diff <= 0) {
+        setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      setCountdown({ days, hours, minutes, seconds });
+    };
+
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const handleToggleMute = async () => {
     const video = videoRef.current;
@@ -106,8 +133,9 @@ function App() {
         <div className="body-item" style={{gridArea: "box-5"}}>
           item5
         </div> 
-        <div className="body-item" style={{gridArea: "box-6"}}>
-          item6
+        <div className="body-item countdown-box" style={{backgroundColor: "hsla(35.09,100%,68.82%,1)", gridArea: "box-6"}}>
+          <div className="countdown-label">Days Till IMBY</div>
+          <div className="countdown-value">{countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s</div>
         </div> 
         <div className="body-item" style={{gridArea: "box-7"}}>
           item7
