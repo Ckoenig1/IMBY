@@ -93,7 +93,7 @@ function App() {
           className="background-video"
           src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=${isMuted ? 1 : 0}&loop=1&controls=0&playlist=${YOUTUBE_VIDEO_ID}&modestbranding=1&rel=0&playsinline=1`}
           frameBorder="0"
-          allow="autoplay; picture-in-picture"
+          allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen
         />
       </div>
