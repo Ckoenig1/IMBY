@@ -1,8 +1,15 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('closes the dropdown when the mouse leaves the dropdown panel', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  const musicItem = screen.getByText('Music').closest('.nav-links');
+  fireEvent.mouseEnter(musicItem);
+
+  expect(screen.getByText('Lineup')).toBeInTheDocument();
+
+  fireEvent.mouseLeave(screen.getByText('Lineup').closest('.dropdown'));
+
+  expect(screen.queryByText('Lineup')).not.toBeInTheDocument();
 });

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import cow from './cow.jpg';
 import camping from './assets/camping.jpg';
@@ -7,7 +7,6 @@ import volunteer from './assets/volunteer.jpeg';
 import MenuItem from './components/menuItem';
 import DropDown from './components/dropDown';
 import If from './components/If';
-import imbyVideo from './assets/imbyVideo.mp4';
 import volumeOff from './assets/volumeOff.svg';
 import volumeOn from './assets/volumeOn.svg';
 
@@ -16,7 +15,7 @@ function App() {
   const [dropdownOpen, setDropdownOpen] = useState("None");
   const [isMuted, setIsMuted] = useState(true);
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const videoRef = useRef(null);
+  const YOUTUBE_VIDEO_ID = 'OCSfqiNnCKQ';
 
   useEffect(() => {
     const targetDate = new Date('2026-10-17T00:00:00');
@@ -44,28 +43,15 @@ function App() {
     return () => clearInterval(timer);
   }, []);
 
-  const handleToggleMute = async () => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const nextMuted = !isMuted;
-    video.muted = nextMuted;
-    setIsMuted(nextMuted);
-
-    if (!nextMuted) {
-      try {
-        await video.play();
-      } catch (error) {
-        console.warn('Video play on unmute failed:', error);
-      }
-    }
+  const handleToggleMute = () => {
+    setIsMuted((prevMuted) => !prevMuted);
   };
 
   return (
     <div className="App">
-      <div className="topContainer">
+      <div className="topContainer" onMouseLeave={() => setDropdownOpen("None")}>
         <div className={"slideBox" + (dropdownOpen != "None" ? " open" : "")}/>
-        <div className="topbar" onMouseLeave={() => setDropdownOpen("None")}>
+        <div className="topbar" >
             
               <div className="nav-left">
                 <button className="hamburger" onClick={() => setOpen(!open)} aria-label="menu">
@@ -102,23 +88,14 @@ function App() {
             className="mute-icon"
           />
         </button>
-        <video
-          ref={videoRef}
-          autoPlay
-          muted={isMuted}
-          loop
-          playsInline
-          preload="auto"
+        <iframe
+          title="IMBY background video"
           className="background-video"
-          onClick={handleToggleMute}
-          onCanPlay={() => {
-            if (videoRef.current && videoRef.current.paused) {
-              videoRef.current.play().catch(() => {});
-            }
-          }}
-        >
-          <source src={imbyVideo} type="video/mp4" />
-        </video>
+          src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=${isMuted ? 1 : 0}&loop=1&controls=0&playlist=${YOUTUBE_VIDEO_ID}&modestbranding=1&rel=0&playsinline=1`}
+          frameBorder="0"
+          allow="autoplay; picture-in-picture"
+          allowFullScreen
+        />
       </div>
       <div className={"body-container"}>
         <div className="body-item hero-panel" style={{backgroundColor: "hsla(211.11,100%,10.59%,1)", gridArea: "box-1"}}>
