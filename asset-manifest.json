@@ -1,22 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.b124ed54.css",
-    "main.js": "/static/js/main.ec3961ba.js",
+    "main.css": "/static/css/main.de373fd6.css",
+    "main.js": "/static/js/main.0df616a8.js",
     "static/js/453.3423ceb3.chunk.js": "/static/js/453.3423ceb3.chunk.js",
     "static/media/camping.jpg": "/static/media/camping.7fb3138af6b99c2830dc.jpg",
+    "static/media/IMBY-Logo-Black-Negative_Logo-Negative-Teal.png": "/static/media/IMBY-Logo-Black-Negative_Logo-Negative-Teal.ed414fb8af805c0887da.png",
+    "static/media/IMBY-Logo-Black-Negative_Logo-Negative-Lime.png": "/static/media/IMBY-Logo-Black-Negative_Logo-Negative-Lime.451c3d02579ee121c52d.png",
+    "static/media/IMBY-Logo-Black-Negative_Logo-Negative-Brown.png": "/static/media/IMBY-Logo-Black-Negative_Logo-Negative-Brown.796ccb6974c22bdcb6ec.png",
+    "static/media/IMBY-Logo-Black-Negative_Logo-Negative-Green.png": "/static/media/IMBY-Logo-Black-Negative_Logo-Negative-Green.b66f48c11f3123098c66.png",
+    "static/media/IMBY-Logo-Black-Negative_Logo-Negative-Blue.png": "/static/media/IMBY-Logo-Black-Negative_Logo-Negative-Blue.6291be02728ba7f58794.png",
+    "static/media/IMBY-Logo-Black-Negative_Logo-Negative-Orange.png": "/static/media/IMBY-Logo-Black-Negative_Logo-Negative-Orange.ea7cc22b0467336092f2.png",
+    "static/media/IMBY-Logo-Black-Negative_Logo-Negative-Tan.png": "/static/media/IMBY-Logo-Black-Negative_Logo-Negative-Tan.ed3a573a969efdad0bfe.png",
     "static/media/volunteer.jpeg": "/static/media/volunteer.9c83417babd171cb0695.jpeg",
     "static/media/lineup.jpg": "/static/media/lineup.0e7c94865e4fa649c53c.jpg",
-    "static/media/imby-logo.gif": "/static/media/imby-logo.ec590c0ef4df03a86879.gif",
     "index.html": "/index.html",
     "static/media/volumeOff.svg": "/static/media/volumeOff.fec5b19e6d39216b0e5e928b8343862e.svg",
     "static/media/volumeOn.svg": "/static/media/volumeOn.f97cc0d361964fb1ad1149374aa2b7c8.svg",
     "static/media/chevron_down.svg": "/static/media/chevron_down.e8242190d3f4b82086fd1974925a4c12.svg",
-    "main.b124ed54.css.map": "/static/css/main.b124ed54.css.map",
-    "main.ec3961ba.js.map": "/static/js/main.ec3961ba.js.map",
+    "main.de373fd6.css.map": "/static/css/main.de373fd6.css.map",
+    "main.0df616a8.js.map": "/static/js/main.0df616a8.js.map",
     "453.3423ceb3.chunk.js.map": "/static/js/453.3423ceb3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b124ed54.css",
-    "static/js/main.ec3961ba.js"
+    "static/css/main.de373fd6.css",
+    "static/js/main.0df616a8.js"
   ]
 }
