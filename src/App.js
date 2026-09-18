@@ -150,26 +150,31 @@ function App() {
       </div>
       <div className={"body-container"}>
         <div className="body-item hero-panel" style={{backgroundColor: "hsla(211.11,100%,10.59%,1)", gridArea: "box-1"}}>
+          <div className="hero-kicker">In My Backyard Festival</div>
           <div className="body-item-content hero-title">DISCOVER GREAT MUSIC IN THE GREAT OUTDOORS</div>
           <div className="body-item-content hero-subtitle">Izaak Walton League | Gaithersburg, Maryland</div>
           <div className="body-item-content hero-date">October 17-18, 2026</div>
+          <button className="hero-ticket-button" type="button" onClick={() => openSection('tickets')}>Get Tickets <span aria-hidden="true">↗</span></button>
         </div> 
         <button className="body-item image-card" type="button" style={{gridArea: "box-3"}} onClick={() => openSection('music')}>
           <img src={lineup} className="image-card-photo" alt="2026 lineup" />
           <div className="body-item-content">
-            2026 LINEUP
+            <span className="image-card-kicker">Live music</span>
+            <span>2026 LINEUP</span>
           </div>
         </button> 
         <button className="body-item image-card" style={{gridArea: "box-4"}} onClick={() => openSection('camping')}>
           <img src={camping} className="image-card-photo" alt="Camping and lodging" />
           <div className="body-item-content">
-            CAMPING & LODGING
+            <span className="image-card-kicker">Stay awhile</span>
+            <span>CAMPING & LODGING</span>
           </div>
         </button> 
         <button className="body-item image-card" style={{gridArea: "box-5"}} onClick={() => openSection('involved')}>
           <img src={volunteer} className="image-card-photo" alt="Volunteer at IMBY" />
           <div className="body-item-content">
-            VOLUNTEER AT IMBY
+            <span className="image-card-kicker">Join the crew</span>
+            <span>VOLUNTEER AT IMBY</span>
           </div>
         </button> 
         <div className="body-item countdown-box" style={{backgroundColor: "hsla(35.09,100%,68.82%,1)", gridArea: "box-6"}}>
