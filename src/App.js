@@ -24,14 +24,6 @@ const homepageSlides = [
   { image: community, alt: 'Community gathering at IMBY Fest', position: 'center center' },
   { image: nature, alt: 'Nature and open space at IMBY Fest', position: 'center center' }
 ];
-const instagramPosts = [
-  { label: 'Behind the scenes', className: 'instagram-post-one' },
-  { label: 'Festival prep', className: 'instagram-post-two' },
-  { label: 'Artist updates', className: 'instagram-post-three' },
-  { label: 'Community', className: 'instagram-post-four' },
-  { label: 'Volunteers', className: 'instagram-post-five' },
-  { label: 'Event preview', className: 'instagram-post-six' }
-];
 const instagramProfileUrl = 'https://www.instagram.com/imbyfest/';
 
 function App() {
@@ -39,7 +31,6 @@ function App() {
   const [dropdownOpen, setDropdownOpen] = useState("None");
   const [activeSection, setActiveSection] = useState(null);
   const [slideIndex, setSlideIndex] = useState(0);
-  const [instagramPostIndex, setInstagramPostIndex] = useState(0);
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   useEffect(() => {
     const targetDate = new Date('2026-10-17T00:00:00');
@@ -78,12 +69,6 @@ function App() {
   const showSlide = (direction) => {
     setSlideIndex((currentIndex) => (
       (currentIndex + direction + homepageSlides.length) % homepageSlides.length
-    ));
-  };
-
-  const showInstagramPost = (direction) => {
-    setInstagramPostIndex((currentIndex) => (
-      (currentIndex + direction + instagramPosts.length) % instagramPosts.length
     ));
   };
 
@@ -234,38 +219,12 @@ function App() {
             <a className="payment-link payment-link-cashapp" href="https://cash.app/$IMBYFEST" target="_blank" rel="noreferrer"><span className="payment-brand-mark" aria-hidden="true">$</span>Cash App $IMBYFEST</a>
           </div>
         </div>
-        <div className="body-item instagram-carousel" style={{gridArea: "box-10"}}>
-          <div className="instagram-carousel-header">
-            <div>
-              <div className="instagram-carousel-title">@imbyfest</div>
-              <div className="instagram-carousel-subtitle">Latest from Instagram</div>
-            </div>
-            <a href={instagramProfileUrl} target="_blank" rel="noreferrer">View profile</a>
-          </div>
-          <div className="instagram-carousel-stage">
-            <button className="instagram-carousel-control" type="button" onClick={() => showInstagramPost(-1)} aria-label="Previous Instagram post">&lt;</button>
-            <a
-              className={`instagram-post-card ${instagramPosts[instagramPostIndex].className}`}
-              href={instagramProfileUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>{instagramPosts[instagramPostIndex].label}</span>
-              <small>Open on Instagram</small>
-            </a>
-            <button className="instagram-carousel-control" type="button" onClick={() => showInstagramPost(1)} aria-label="Next Instagram post">&gt;</button>
-          </div>
-          <div className="instagram-carousel-dots" aria-label="Instagram carousel position">
-            {instagramPosts.map((post, index) => (
-              <button
-                key={post.label}
-                className={index === instagramPostIndex ? 'active' : ''}
-                type="button"
-                onClick={() => setInstagramPostIndex(index)}
-                aria-label={`Show ${post.label} Instagram post`}
-              />
-            ))}
-          </div>
+        <div className="body-item instagram-profile-panel" style={{gridArea: "box-10"}}>
+          <div className="instagram-profile-mark" aria-hidden="true">◎</div>
+          <div className="instagram-profile-title">@imbyfest</div>
+          <a className="instagram-profile-button" href={instagramProfileUrl} target="_blank" rel="noreferrer">
+            Follow us on Instagram <span aria-hidden="true">↗</span>
+          </a>
         </div> 
       </div>
       </>}
