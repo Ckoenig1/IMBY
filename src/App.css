@@ -397,44 +397,90 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  height: 100vh;
+  min-height: 560px;
   overflow: hidden;
   z-index: 0;
 }
 
-.background-video {
-  display: block;
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
+.homepage-slideshow {
   position: relative;
-  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--imby-navy);
 }
 
-.video-unmute-button {
+.homepage-slideshow::after {
   position: absolute;
-  right: 16px;
-  bottom: 16px;
-  top: auto;
-  z-index: 1;
-  pointer-events: auto;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 18, 33, 0.24), rgba(7, 18, 33, 0.08) 45%, rgba(7, 18, 33, 0.5));
+  content: "";
+  pointer-events: none;
+}
+
+.homepage-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 900ms ease, transform 7s ease;
+}
+
+.homepage-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.slideshow-controls {
+  position: absolute;
+  right: clamp(1rem, 4vw, 3rem);
+  bottom: clamp(1rem, 4vw, 2.5rem);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.slideshow-controls > button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border: none;
-  border-radius: 999px;
-  padding: 0;
-  background: rgba(11, 38, 64, 0.85);
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(255, 250, 241, 0.7);
+  border-radius: 50%;
+  color: #fffaf1;
+  background: rgba(11, 38, 64, 0.58);
+  font-size: 1.2rem;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-.mute-icon {
-  width: 20px;
-  height: 20px;
-  filter: invert(1) brightness(1.2);
+.slideshow-controls > button:hover,
+.slideshow-controls > button:focus-visible {
+  background: rgba(182, 77, 43, 0.9);
+}
+
+.slideshow-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.slideshow-dots button {
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 250, 241, 0.65);
+  cursor: pointer;
+}
+
+.slideshow-dots button.active {
+  background: #e7b65a;
+  transform: scale(1.25);
 }
 
 .body-container {
@@ -475,6 +521,7 @@
 
 .hero-panel {
   position: relative;
+  isolation: isolate;
   align-items: flex-start;
   justify-content: center;
   text-align: left;
@@ -483,6 +530,59 @@
   background:
     linear-gradient(120deg, rgba(7, 18, 33, 0.96), rgba(17, 41, 72, 0.84)),
     radial-gradient(circle at 80% 20%, rgba(231, 182, 90, 0.32), transparent 32%);
+}
+
+.hero-scenery {
+  position: absolute;
+  inset: auto 0 0;
+  width: 100%;
+  height: 72%;
+  color: #e7b65a;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero-scenery-line,
+.hero-scenery-sun {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.hero-scenery-sun {
+  fill: rgba(231, 182, 90, 0.08);
+  stroke-width: 1.5;
+}
+
+.hero-scenery-horizon {
+  opacity: 0.55;
+}
+
+.hero-scenery-tree-trunk {
+  stroke-width: 2.25;
+}
+
+.hero-scenery-tree-canopy {
+  fill: rgba(231, 182, 90, 0.06);
+  stroke-width: 2;
+}
+
+.hero-scenery-tree-detail {
+  opacity: 0.48;
+  stroke-width: 1.25;
+}
+
+.hero-scenery-grass {
+  opacity: 0.75;
+  stroke-width: 1.5;
+}
+
+.hero-scenery-birds {
+  opacity: 0.7;
+  stroke-width: 1.25;
 }
 
 .hero-panel::after {

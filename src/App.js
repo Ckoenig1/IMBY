@@ -12,10 +12,18 @@ import lineup from './assets/lineup.jpg';
 import volunteer from './assets/volunteer.jpeg';
 import MenuItem from './components/menuItem';
 import DropDown from './components/dropDown';
-import volumeOff from './assets/volumeOff.svg';
-import volumeOn from './assets/volumeOn.svg';
+import festivalStage from './assets/homepage-slideshow/festival-stage.png';
+import woodland from './assets/homepage-slideshow/woodland.jpg';
+import community from './assets/homepage-slideshow/community.jpg';
+import nature from './assets/homepage-slideshow/nature.jpg';
 
 const logoFrames = [logoBlue, logoBrown, logoGreen, logoLime, logoOrange, logoTan, logoTeal];
+const homepageSlides = [
+  { image: festivalStage, alt: 'Live music outdoors at IMBY Fest', position: 'center center' },
+  { image: woodland, alt: 'Woodland setting at IMBY Fest', position: 'center center' },
+  { image: community, alt: 'Community gathering at IMBY Fest', position: 'center center' },
+  { image: nature, alt: 'Nature and open space at IMBY Fest', position: 'center center' }
+];
 const instagramPosts = [
   { label: 'Behind the scenes', className: 'instagram-post-one' },
   { label: 'Festival prep', className: 'instagram-post-two' },
@@ -30,11 +38,9 @@ function App() {
   const [open, setOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState("None");
   const [activeSection, setActiveSection] = useState(null);
-  const [isMuted, setIsMuted] = useState(true);
+  const [slideIndex, setSlideIndex] = useState(0);
   const [instagramPostIndex, setInstagramPostIndex] = useState(0);
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const YOUTUBE_VIDEO_ID = 'OCSfqiNnCKQ';
-
   useEffect(() => {
     const targetDate = new Date('2026-10-17T00:00:00');
 
@@ -61,8 +67,18 @@ function App() {
     return () => clearInterval(timer);
   }, []);
 
-  const handleToggleMute = () => {
-    setIsMuted((prevMuted) => !prevMuted);
+  useEffect(() => {
+    const slideshowTimer = setInterval(() => {
+      setSlideIndex((currentIndex) => (currentIndex + 1) % homepageSlides.length);
+    }, 6500);
+
+    return () => clearInterval(slideshowTimer);
+  }, []);
+
+  const showSlide = (direction) => {
+    setSlideIndex((currentIndex) => (
+      (currentIndex + direction + homepageSlides.length) % homepageSlides.length
+    ));
   };
 
   const showInstagramPost = (direction) => {
@@ -126,30 +142,48 @@ function App() {
         <SectionView section={activeSection} onBack={() => setActiveSection(null)} />
       ) : <>
       <div className="video-container">
-        <button
-          type="button"
-          className="video-unmute-button"
-          onClick={handleToggleMute}
-          aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-          title={isMuted ? 'Unmute video' : 'Mute video'}
-        >
-          <img
-            src={isMuted ? volumeOff : volumeOn}
-            alt={isMuted ? 'Muted' : 'Unmuted'}
-            className="mute-icon"
-          />
-        </button>
-        <iframe
-          title="IMBY background video"
-          className="background-video"
-          src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=${isMuted ? 1 : 0}&loop=1&controls=0&playlist=${YOUTUBE_VIDEO_ID}&modestbranding=1&rel=0&playsinline=1`}
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-        />
+        <div className="homepage-slideshow" aria-label="IMBY Fest photo slideshow">
+          {homepageSlides.map((slide, index) => (
+            <img
+              key={slide.image}
+              className={`homepage-slide${index === slideIndex ? ' active' : ''}`}
+              src={slide.image}
+              alt={slide.alt}
+              style={{ objectPosition: slide.position }}
+            />
+          ))}
+          <div className="slideshow-controls">
+            <button type="button" onClick={() => showSlide(-1)} aria-label="Previous slideshow photo">&lt;</button>
+            <div className="slideshow-dots" aria-label="Slideshow position">
+              {homepageSlides.map((slide, index) => (
+                <button
+                  key={slide.image}
+                  className={index === slideIndex ? 'active' : ''}
+                  type="button"
+                  onClick={() => setSlideIndex(index)}
+                  aria-label={`Show photo ${index + 1}`}
+                />
+              ))}
+            </div>
+            <button type="button" onClick={() => showSlide(1)} aria-label="Next slideshow photo">&gt;</button>
+          </div>
+        </div>
       </div>
       <div className={"body-container"}>
         <div className="body-item hero-panel" style={{backgroundColor: "hsla(211.11,100%,10.59%,1)", gridArea: "box-1"}}>
+          <svg className="hero-scenery" viewBox="0 0 600 180" aria-hidden="true" focusable="false">
+            <circle className="hero-scenery-sun" cx="505" cy="42" r="23" />
+            <path className="hero-scenery-line" d="M0 145 C95 112 145 132 220 112 C295 92 338 125 410 104 C480 84 535 104 600 78" />
+            <path className="hero-scenery-line hero-scenery-horizon" d="M0 160 C115 143 178 158 275 145 C376 132 460 146 600 126" />
+            <path className="hero-scenery-line hero-scenery-tree-trunk" d="M72 145 V104 M66 145 H78 M72 119 L55 105 M72 126 L89 111" />
+            <path className="hero-scenery-line hero-scenery-tree-canopy" d="M72 108 C52 108 41 98 47 86 C38 76 48 62 62 64 C65 47 83 44 91 58 C106 54 116 68 108 79 C116 91 104 106 90 103 C84 109 77 110 72 108 Z" />
+            <path className="hero-scenery-line hero-scenery-tree-detail" d="M52 85 C64 80 78 81 91 73 M61 97 C74 91 87 92 101 86" />
+            <path className="hero-scenery-line hero-scenery-tree-trunk" d="M548 127 V88 M542 127 H554 M548 101 L531 88 M548 108 L565 94" />
+            <path className="hero-scenery-line hero-scenery-tree-canopy" d="M548 91 C529 92 517 82 522 70 C514 59 523 46 537 48 C539 32 557 29 566 43 C580 39 591 53 584 64 C593 76 581 90 567 87 C562 93 554 94 548 91 Z" />
+            <path className="hero-scenery-line hero-scenery-tree-detail" d="M527 70 C540 65 553 67 568 58 M536 82 C548 76 562 78 578 72" />
+            <path className="hero-scenery-line hero-scenery-grass" d="M18 164 C20 153 22 149 24 144 M24 164 C28 155 32 151 36 148 M112 164 C114 154 118 149 123 145 M120 164 C125 155 130 152 136 150 M575 145 C579 137 583 133 588 130 M584 145 C590 139 594 137 599 137" />
+            <path className="hero-scenery-line hero-scenery-birds" d="M415 48 Q423 41 431 48 Q439 41 447 48 M458 62 Q464 57 470 62 Q476 57 482 62" />
+          </svg>
           <div className="hero-kicker">In My Backyard Festival</div>
           <div className="body-item-content hero-title">DISCOVER GREAT MUSIC IN THE GREAT OUTDOORS</div>
           <div className="body-item-content hero-subtitle">Izaak Walton League | Gaithersburg, Maryland</div>
