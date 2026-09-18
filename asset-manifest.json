@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.fb57ccd6.css",
-    "main.js": "/static/js/main.527f94a3.js",
+    "main.css": "/static/css/main.477c0528.css",
+    "main.js": "/static/js/main.7f63f66b.js",
     "static/js/453.3423ceb3.chunk.js": "/static/js/453.3423ceb3.chunk.js",
     "static/media/festival-stage.png": "/static/media/festival-stage.c31b0e071c54f7315599.png",
     "static/media/nature.jpg": "/static/media/nature.e9586d97bda73543b3b6.jpg",
@@ -19,12 +19,12 @@
     "static/media/lineup.jpg": "/static/media/lineup.0e7c94865e4fa649c53c.jpg",
     "index.html": "/index.html",
     "static/media/chevron_down.svg": "/static/media/chevron_down.e8242190d3f4b82086fd1974925a4c12.svg",
-    "main.fb57ccd6.css.map": "/static/css/main.fb57ccd6.css.map",
-    "main.527f94a3.js.map": "/static/js/main.527f94a3.js.map",
+    "main.477c0528.css.map": "/static/css/main.477c0528.css.map",
+    "main.7f63f66b.js.map": "/static/js/main.7f63f66b.js.map",
     "453.3423ceb3.chunk.js.map": "/static/js/453.3423ceb3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb57ccd6.css",
-    "static/js/main.527f94a3.js"
+    "static/css/main.477c0528.css",
+    "static/js/main.7f63f66b.js"
   ]
 }
