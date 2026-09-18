@@ -335,6 +335,7 @@
 /* App existing styles adjusted to account for fixed topbar */
 .App {
   text-align: center;
+  background: #f2eee5;
 }
 
 .App-logo {
@@ -423,20 +424,19 @@
   display:grid;
   z-index: 0;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 400px 300px 200px 200px 200px 200px;
+  grid-template-rows: 400px 300px 200px 200px 320px;
   grid-template-areas:
   "box-1 box-1 box-1 box-1 box-1 box-1"
   "box-3 box-3 box-4 box-4 box-5 box-5"
   "box-6 box-6 box-6 box-6 box-6 box-6"
   "box-7 box-7 box-7 box-8 box-8 box-8"
-  "box-9 box-9 box-9 box-9 box-9 box-9"
   "box-10 box-10 box-10 box-10 box-10 box-10";
 }
 
 @media (max-width: 650px) {
   .body-container {
     grid-template-columns: 1fr;
-    grid-template-rows: 400px 200px 200px 200px 200px 200px 200px 200px 200px;
+    grid-template-rows: 400px 200px 200px 200px 200px 200px 200px 360px;
     grid-template-areas:
       "box-1"
       "box-3"
@@ -445,7 +445,6 @@
       "box-6"
       "box-7"
       "box-8"
-      "box-9"
       "box-10";
   }
 }
@@ -742,7 +741,7 @@
   align-items: center;
   justify-content: center;
   padding: 2em;
-  background-color: blue;
+  background-color: transparent;
   z-index: 1;
   overflow: hidden;
 }
@@ -983,6 +982,15 @@
   max-width: 600px;
   margin: 1.7rem auto 0;
   font: 1.2rem/1.6 Georgia, 'Times New Roman', serif;
+}
+
+.section-action-link {
+  margin: 1rem 0 0;
+  font: 700 0.95rem Arial, sans-serif;
+}
+
+.section-action-link a {
+  color: #b64d2b;
 }
 
 .section-copy {
