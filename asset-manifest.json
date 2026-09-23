@@ -1,12 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.477c0528.css",
-    "main.js": "/static/js/main.7f63f66b.js",
+    "main.css": "/static/css/main.de23c4cd.css",
+    "main.js": "/static/js/main.dbc526b3.js",
     "static/js/453.3423ceb3.chunk.js": "/static/js/453.3423ceb3.chunk.js",
-    "static/media/festival-stage.png": "/static/media/festival-stage.c31b0e071c54f7315599.png",
-    "static/media/nature.jpg": "/static/media/nature.e9586d97bda73543b3b6.jpg",
-    "static/media/community.jpg": "/static/media/community.b2932361ae4abecfce26.jpg",
-    "static/media/woodland.jpg": "/static/media/woodland.1fb35a07d73aa3bd73bc.jpg",
+    "static/media/Copy of IMG_6578.JPG": "/static/media/Copy of IMG_6578.56c62d9a8c098b1e17c3.JPG",
+    "static/media/Copy of IMG_6526.JPG": "/static/media/Copy of IMG_6526.a376654ffe26d1e775b4.JPG",
+    "static/media/Copy of cachedImage 4.PNG": "/static/media/Copy of cachedImage 4.ef045e5e4a40d5c8b0e5.PNG",
+    "static/media/Copy of 20251010_225507.jpg": "/static/media/Copy of 20251010_225507.1a7a1f63492ceafd90a4.jpg",
+    "static/media/Copy of 20251011_204750.jpg": "/static/media/Copy of 20251011_204750.a72e930617139385cca1.jpg",
+    "static/media/Copy of imby butterfly.png": "/static/media/Copy of imby butterfly.298ec69b039f34bec2ca.png",
+    "static/media/Copy of Imby Flowers.png": "/static/media/Copy of Imby Flowers.74c6ef47d92e6218194d.png",
+    "static/media/Copy of imbyposter.png": "/static/media/Copy of imbyposter.91ed8be8c9c7fe6837c2.png",
+    "static/media/Copy of image 7.JPG": "/static/media/Copy of image 7.7e1b6fbe7f81554e70d1.JPG",
+    "static/media/Copy of Imby wallpaper.png": "/static/media/Copy of Imby wallpaper.7608d5509c3479cb873a.png",
+    "static/media/Copy of 20251009_152400.JPG": "/static/media/Copy of 20251009_152400.188623fa3d903cc0715a.JPG",
+    "static/media/Copy of 20251010_175323.JPG": "/static/media/Copy of 20251010_175323.a30fe6914395a65ef3f7.JPG",
+    "static/media/Copy of 20250811_171340.JPG": "/static/media/Copy of 20250811_171340.78decaaffc7f17e32966.JPG",
     "static/media/camping.jpg": "/static/media/camping.7fb3138af6b99c2830dc.jpg",
     "static/media/IMBY-Logo-Black-Negative_Logo-Negative-Teal.png": "/static/media/IMBY-Logo-Black-Negative_Logo-Negative-Teal.ed414fb8af805c0887da.png",
     "static/media/IMBY-Logo-Black-Negative_Logo-Negative-Lime.png": "/static/media/IMBY-Logo-Black-Negative_Logo-Negative-Lime.451c3d02579ee121c52d.png",
@@ -17,14 +26,18 @@
     "static/media/IMBY-Logo-Black-Negative_Logo-Negative-Tan.png": "/static/media/IMBY-Logo-Black-Negative_Logo-Negative-Tan.ed3a573a969efdad0bfe.png",
     "static/media/volunteer.jpeg": "/static/media/volunteer.9c83417babd171cb0695.jpeg",
     "static/media/lineup.jpg": "/static/media/lineup.0e7c94865e4fa649c53c.jpg",
+    "static/media/Copy of signal-2025-10-11-22-14-29-200-2.JPG": "/static/media/Copy of signal-2025-10-11-22-14-29-200-2.f741ff4152a5418c947c.JPG",
+    "static/media/Copy of IMG_5594 2.JPG": "/static/media/Copy of IMG_5594 2.72ed18db754806f65a0b.JPG",
+    "static/media/Copy of 20251011_192227.JPG": "/static/media/Copy of 20251011_192227.208d0d0b00b4c5c6a1b1.JPG",
+    "static/media/Copy of imbywallpaper teal orange.png": "/static/media/Copy of imbywallpaper teal orange.6e293d5825df10b4d146.png",
     "index.html": "/index.html",
     "static/media/chevron_down.svg": "/static/media/chevron_down.e8242190d3f4b82086fd1974925a4c12.svg",
-    "main.477c0528.css.map": "/static/css/main.477c0528.css.map",
-    "main.7f63f66b.js.map": "/static/js/main.7f63f66b.js.map",
+    "main.de23c4cd.css.map": "/static/css/main.de23c4cd.css.map",
+    "main.dbc526b3.js.map": "/static/js/main.dbc526b3.js.map",
     "453.3423ceb3.chunk.js.map": "/static/js/453.3423ceb3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.477c0528.css",
-    "static/js/main.7f63f66b.js"
+    "static/css/main.de23c4cd.css",
+    "static/js/main.dbc526b3.js"
   ]
 }
