@@ -14,6 +14,15 @@ import MenuItem from './components/menuItem';
 import DropDown from './components/dropDown';
 
 const logoFrames = [logoBlue, logoBrown, logoGreen, logoLime, logoOrange, logoTan, logoTeal];
+const preloadLogoFrames = () => Promise.all(
+  logoFrames.map((logo) => new Promise((resolve) => {
+    const img = new Image();
+    img.decoding = 'async';
+    img.onload = resolve;
+    img.onerror = resolve;
+    img.src = logo;
+  }))
+);
 const slideshowContext = require.context('./assets/homepage-slideshow', false, /\.(png|jpe?g|webp)$/i);
 const homepageSlides = slideshowContext.keys().map((key, index) => ({
   image: slideshowContext(key),
@@ -27,7 +36,22 @@ function App() {
   const [dropdownOpen, setDropdownOpen] = useState("None");
   const [activeSection, setActiveSection] = useState(null);
   const [slideIndex, setSlideIndex] = useState(0);
+  const [logosReady, setLogosReady] = useState(false);
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    let isMounted = true;
+
+    preloadLogoFrames().finally(() => {
+      if (isMounted) {
+        setLogosReady(true);
+      }
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   useEffect(() => {
     const slideshowTimer = setInterval(() => {
@@ -99,7 +123,19 @@ function App() {
               <div className="nav-center">
                 <button className="logo-button" type="button" onClick={() => { setActiveSection(null); setDropdownOpen("None"); }} aria-label="Return to home">
                   <span className="logo-animation" aria-hidden="true">
-                    {logoFrames.map((logo, index) => <img src={logo} alt="" className="center-logo" key={logo} style={{ animationDelay: `${index * -1.5}s` }} />)}
+                    {logoFrames.map((logo, index) => (
+                      <img
+                        src={logo}
+                        alt=""
+                        className="center-logo"
+                        key={logo}
+                        style={{
+                          animationDelay: `${index * -1.5}s`,
+                          animationPlayState: logosReady ? 'running' : 'paused',
+                          opacity: logosReady ? undefined : index === 0 ? 1 : 0
+                        }}
+                      />
+                    ))}
                   </span>
                 </button>
               </div>
