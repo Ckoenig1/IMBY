@@ -12,18 +12,14 @@ import lineup from './assets/lineup.jpg';
 import volunteer from './assets/volunteer.jpeg';
 import MenuItem from './components/menuItem';
 import DropDown from './components/dropDown';
-import festivalStage from './assets/homepage-slideshow/festival-stage.png';
-import woodland from './assets/homepage-slideshow/woodland.jpg';
-import community from './assets/homepage-slideshow/community.jpg';
-import nature from './assets/homepage-slideshow/nature.jpg';
 
 const logoFrames = [logoBlue, logoBrown, logoGreen, logoLime, logoOrange, logoTan, logoTeal];
-const homepageSlides = [
-  { image: festivalStage, alt: 'Live music outdoors at IMBY Fest', position: 'center center' },
-  { image: woodland, alt: 'Woodland setting at IMBY Fest', position: 'center center' },
-  { image: community, alt: 'Community gathering at IMBY Fest', position: 'center center' },
-  { image: nature, alt: 'Nature and open space at IMBY Fest', position: 'center center' }
-];
+const slideshowContext = require.context('./assets/homepage-slideshow', false, /\.(png|jpe?g|webp)$/i);
+const homepageSlides = slideshowContext.keys().map((key, index) => ({
+  image: slideshowContext(key),
+  alt: `IMBY Fest slideshow image ${index + 1}`,
+  position: 'center center'
+}));
 const instagramProfileUrl = 'https://www.instagram.com/imbyfest/';
 
 function App() {
@@ -32,6 +28,15 @@ function App() {
   const [activeSection, setActiveSection] = useState(null);
   const [slideIndex, setSlideIndex] = useState(0);
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const slideshowTimer = setInterval(() => {
+      setSlideIndex((currentIndex) => Math.min(currentIndex + 1, homepageSlides.length - 1));
+    }, 6500);
+
+    return () => clearInterval(slideshowTimer);
+  }, []);
+
   useEffect(() => {
     const targetDate = new Date('2026-10-17T00:00:00');
 
@@ -58,18 +63,11 @@ function App() {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    const slideshowTimer = setInterval(() => {
-      setSlideIndex((currentIndex) => (currentIndex + 1) % homepageSlides.length);
-    }, 6500);
-
-    return () => clearInterval(slideshowTimer);
-  }, []);
-
   const showSlide = (direction) => {
-    setSlideIndex((currentIndex) => (
-      (currentIndex + direction + homepageSlides.length) % homepageSlides.length
-    ));
+    setSlideIndex((currentIndex) => {
+      const nextIndex = currentIndex + direction;
+      return Math.min(Math.max(nextIndex, 0), homepageSlides.length - 1);
+    });
   };
 
   const openSection = (section) => {
@@ -241,7 +239,7 @@ function SectionView({ section }) {
     music: {
       eyebrow: 'Lineup & schedule',
       title: 'Music',
-      intro: 'A weekend of live music with Saturday and Sunday set times.',
+      intro: '',
       body: <>
         <p>Music will be starting at 3:30 on Saturday (10/17) and concluding at 11:00pm Saturday.</p>
         <p>Sundays (10/18) lineup will start at 12:00 Noon and conclude at 4:00 Pm</p>
@@ -252,13 +250,13 @@ function SectionView({ section }) {
     camping: {
       eyebrow: 'Plan your stay', title: 'Camping & Lodging',
       intro: 'Make a weekend of it. Bring your own tent for a quiet, walk-up campsite, or choose a nearby hotel for a little more comfort.',
-      body: <><h2>Camping</h2><p>Pitch your own tent at one of our 2 different walk-up remote tent camping areas. Each campsite is reserved for <strong>$25</strong> and can fit up to <strong>4 people</strong>.</p><p>Campsite sizes are all roughly 20’x10’, which generally allows for enough room for 1 tent and a small sitting area. There will be public fire pits available for cooking, making s’mores, or making friends!</p><p>Because we have limited availability, reservations for camping are <em>required</em>. We cannot guarantee day-of campsite availability. Please email <a href="mailto:camping@imbyfest.com">camping@imbyfest.com</a> with the number of people in your party to reserve and purchase your camping pass!</p><div className="stay-columns"><div><h3>Camp Redwood</h3><ul><li>Open to all ages, families, and those wanting a more quiet, sober experience</li><li>Quiet hours from 10:00pm - 8:00am</li><li><strong>Alcohol and substance use prohibited within campground</strong></li></ul></div><div><h3>Camp White Pine</h3><ul><li>18+ campers only</li><li>No enforced quiet hours, but we ask that you be respectful of your neighbors</li></ul></div></div><p><em>Please note: while we do ask for quiet hours in Camp Redwood, the sites are close enough to the stage that music and lights may still affect your little ones or light sleepers. Plan accordingly and bring ear plugs, eye masks, or anything else you may need!</em></p><h2>Hotels</h2><p>There are a number of hotels and Airbnbs within a 15-30 minute drive from the festival grounds. Below are some, but not all of the options:</p><ul className="hotel-list"><li><strong>The Inn on Fox Meadow</strong><br />104 Russell Avenue<br />Gaithersburg, MD 20877<br /><a href="https://foxmeadow.us/" target="_blank" rel="noreferrer">foxmeadow.us</a></li><li><strong>Holiday Inn Gaithersburg</strong><br />Two Montgomery Village Ave<br />Gaithersburg, MD 20879</li><li><strong>Motel 6 Gaithersburg</strong><br />497 Quince Orchard Rd<br />Gaithersburg, MD 20879</li><li><strong>Doubletree by Hilton</strong><br />620 Perry Parkway<br />Gaithersburg, MD 20877</li><li><strong>Spark by Hilton Germantown</strong><br />20260 Goldenrod Lane<br />Gaithersburg, MD 20876</li><li><strong>Hampton Inn & Suites</strong><br />960 N Frederick Ave<br />Gaithersburg, MD 20879</li></ul></>
+      body: <><h2>Camping</h2><p>Pitch your own tent at one of our 2 different walk-up remote tent camping areas. Each campsite is reserved for <strong>$25</strong> and can fit up to <strong>4 people</strong>.</p><p>Campsite sizes are all roughly 20’x10’, which generally allows for enough room for 1 tent and a small sitting area. There will be public fire pits available for cooking, making s’mores, or making friends!</p><p>Because we have limited availability, reservations for camping are <em>required</em>. We cannot guarantee day-of campsite availability.</p><div className="stay-columns"><div><h3>Camp Redwood</h3><ul><li>Open to all ages, families, and those wanting a more quiet, sober experience</li><li>Quiet hours from 10:00pm - 8:00am</li><li><strong>Alcohol and substance use prohibited within campground</strong></li></ul></div><div><h3>Camp White Pine</h3><ul><li>18+ campers only</li><li>No enforced quiet hours, but we ask that you be respectful of your neighbors</li></ul></div></div><p><em>Please note: while we do ask for quiet hours in Camp Redwood, the sites are close enough to the stage that music and lights may still affect your little ones or light sleepers. Plan accordingly and bring ear plugs, eye masks, or anything else you may need!</em></p><h2>Hotels</h2><p>There are a number of hotels and Airbnbs within a 15-30 minute drive from the festival grounds. Below are some, but not all of the options:</p><ul className="hotel-list"><li><strong>The Inn on Fox Meadow</strong><br />104 Russell Avenue<br />Gaithersburg, MD 20877<br /><a href="https://foxmeadow.us/" target="_blank" rel="noreferrer">foxmeadow.us</a></li><li><strong>Holiday Inn Gaithersburg</strong><br />Two Montgomery Village Ave<br />Gaithersburg, MD 20879</li><li><strong>Motel 6 Gaithersburg</strong><br />497 Quince Orchard Rd<br />Gaithersburg, MD 20879</li><li><strong>Doubletree by Hilton</strong><br />620 Perry Parkway<br />Gaithersburg, MD 20877</li><li><strong>Spark by Hilton Germantown</strong><br />20260 Goldenrod Lane<br />Gaithersburg, MD 20876</li><li><strong>Hampton Inn & Suites</strong><br />960 N Frederick Ave<br />Gaithersburg, MD 20879</li></ul></>
     },
     beyond: { eyebrow: 'More than music', title: 'Beyond the Music', intro: 'A festival weekend built around local creativity, good food, and plenty of room to play.', body: <><h2>Art</h2><p>We plan to offer a great selection of art vendors with a variety of mediums represented. Here’s a list of confirmed vendors with more added every day!</p><ul><li><strong>Clay Monger Pottery:</strong> Baltimore-based ceramicist offering specialized mugs, jewelry, cutting boards, and a wheel-throwing demonstration.</li><li><strong>Lily Ertel:</strong> An IMBY staple offering $10 quick marker portraits and a collection of prints.</li><li><strong>Necronomikitten and Yupitslizz:</strong> Cute custom Halloween decor, prints, and accessories perfect for the season.</li></ul><h2>Activities</h2><p>There’s all kinds of fun to be had In My Backyard! We are bringing in incredible professionals to provide interactive experiences everyone can enjoy.</p><ul><li>Join Eco-Poet Hillary Gonzalez, author of <em>Seasons, Wild, Unfelt World</em> (2026) and <em>Where the Osprey Nest</em> (2026), on a guided open-mic poetry hike and get inspired by your surroundings.</li><li>Salute the sun with Sunday morning yoga led by Naomi Hurley, perfect for beginners and veteran yogis alike.</li><li>Keep an eye out for Elvers the Clown, spreading mischief and sad clown melodies throughout the festival.</li></ul><p>There is always more to do and more to discover In My Backyard!</p></> },
     involved: { eyebrow: 'Join the community', title: 'Get Involved', intro: 'IMBY is only as successful as the community we have, and we’d love to have you join that community.', body: <><h2>Volunteer at IMBY</h2><p>IMBY is only as successful as the community we have, and we’d love to have you join that community. You will be getting in at the ground floor, helping create an experience for everyone to enjoy for years to come. Linked above are the positions we will need help with both during the festival and leading up to it.</p><p>Each volunteer will receive a free commemorative patch for their participation as a thank you. Please sign up here: <a href="https://www.signupgenius.com/go/20F0D4EA9AC29ABFEC34-65580751-imby#/" target="_blank" rel="noreferrer">IMBY volunteer signup</a>.</p><p>If you aren’t able to volunteer but still want to help out, please donate via Venmo or Cash App to @IMBYFEST, or email <a href="mailto:contact@imbyfest.com">contact@imbyfest.com</a> with any questions. Can’t wait to see you In My Backyard!</p><h2>About IWL</h2><p>IMBY is hosted on the grounds of the <a href="https://sites.google.com/view/iwla-loisgreensligochapter/home?pli=1&authuser=0" target="_blank" rel="noreferrer">Lois Green Chapter of the Izaak Walton League</a>, a local conservation group dedicated to preserving and enjoying the outdoors. The League helps make this festival possible through their stewardship of the land and their support of community-centered outdoor gathering.</p></> }
   }[section];
 
-  return <main className="section-page"><header className="section-heading"><p>{content.eyebrow}</p><h1>{content.title}</h1><div>{content.intro}</div>{section === 'camping' && <p className="section-action-link">Reservations can be made online at <a href="https://imbyfest.com/" target="_blank" rel="noreferrer">IMBYFEST.COM</a>.</p>}</header><article className="section-copy">{content.body}</article></main>;
+  return <main className="section-page"><header className="section-heading"><p>{content.eyebrow}</p><h1>{content.title}</h1><div>{content.intro}</div></header><article className="section-copy">{content.body}</article></main>;
 }
 
 function BuyTicketsView() {

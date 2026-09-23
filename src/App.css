@@ -512,6 +512,49 @@
       "box-8"
       "box-10";
   }
+
+  .hero-payment-links {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-payment-links a {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .slideshow-controls {
+    left: 0.75rem;
+    right: 0.75rem;
+    justify-content: center;
+    gap: 0.45rem 0.55rem;
+    width: calc(100% - 1.5rem);
+    max-width: calc(100% - 1.5rem);
+  }
+
+  .slideshow-controls > button {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .slideshow-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: calc(100% - 5.5rem);
+    overflow: hidden;
+    gap: 0.25rem;
+  }
+
+  .slideshow-dots button {
+    width: 0.38rem;
+    height: 0.38rem;
+    min-width: 0;
+    flex-shrink: 0;
+  }
 }
 .body-item-content{
   text-align: center;
@@ -1012,7 +1055,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+  padding: 0.9rem 1.1rem;
   color: var(--imby-forest);
   background: var(--imby-gold);
   text-align: center;
@@ -1026,7 +1069,7 @@
 }
 
 .countdown-value {
-  margin-top: 0.5rem;
+  margin-top: 0.45rem;
   font-size: clamp(1rem, 2.5vw, 1.4rem);
   font-weight: 800;
   letter-spacing: 0.02em;
