@@ -25,7 +25,9 @@ const preloadLogoFrames = () => Promise.all(
   }))
 );
 const slideshowContext = require.context('./assets/homepage-slideshow', false, /\.(png|jpe?g|webp)$/i);
-const homepageSlides = slideshowContext.keys().map((key, index) => {
+const homepageSlides = slideshowContext.keys()
+  .filter((key) => !key.toLowerCase().includes('copy of imbyposter'))
+  .map((key, index) => {
   const normalizedKey = key.toLowerCase();
   const isIMG6578 = normalizedKey.includes('img_6578');
   const isIMG6526 = normalizedKey.includes('img_6526');
@@ -35,7 +37,7 @@ const homepageSlides = slideshowContext.keys().map((key, index) => {
     alt: `IMBY Fest slideshow image ${index + 1}`,
     position: isIMG6578 ? 'center 28%' : isIMG6526 ? 'center 18%' : 'center center'
   };
-});
+  });
 const instagramProfileUrl = 'https://www.instagram.com/imbyfest/';
 
 function App() {
