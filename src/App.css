@@ -489,7 +489,7 @@
   display:grid;
   z-index: 0;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 400px 300px 200px 200px 320px;
+  grid-template-rows: auto 300px 200px 200px 320px;
   grid-template-areas:
   "box-1 box-1 box-1 box-1 box-1 box-1"
   "box-3 box-3 box-4 box-4 box-5 box-5"
@@ -562,17 +562,18 @@
   z-index: 1;
 }
 
-.hero-panel {
+.home-poster {
   position: relative;
-  isolation: isolate;
-  align-items: flex-start;
-  justify-content: center;
-  text-align: left;
-  padding: clamp(2rem, 5vw, 4rem);
-  color: #fff;
-  background:
-    linear-gradient(120deg, rgba(7, 18, 33, 0.96), rgba(17, 41, 72, 0.84)),
-    radial-gradient(circle at 80% 20%, rgba(231, 182, 90, 0.32), transparent 32%);
+  z-index: 0;
+  display: block;
+  width: 100vw;
+  max-width: 100vw;
+  height: auto;
+  object-fit: contain;
+  background: #fff;
+  grid-area: box-1;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .hero-scenery {

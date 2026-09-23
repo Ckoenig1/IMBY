@@ -10,6 +10,7 @@ import logoTeal from './assets/Logo Files/IMBY-Logo-Black-Negative_Logo-Negative
 import camping from './assets/camping.jpg';
 import lineup from './assets/lineup.jpg';
 import volunteer from './assets/volunteer.jpeg';
+import posterImage from './assets/homepage-slideshow/Copy of imbyposter.png';
 import MenuItem from './components/menuItem';
 import DropDown from './components/dropDown';
 
@@ -27,11 +28,12 @@ const slideshowContext = require.context('./assets/homepage-slideshow', false, /
 const homepageSlides = slideshowContext.keys().map((key, index) => {
   const normalizedKey = key.toLowerCase();
   const isIMG6578 = normalizedKey.includes('img_6578');
+  const isIMG6526 = normalizedKey.includes('img_6526');
 
   return {
     image: slideshowContext(key),
     alt: `IMBY Fest slideshow image ${index + 1}`,
-    position: isIMG6578 ? 'center 28%' : 'center center'
+    position: isIMG6578 ? 'center 28%' : isIMG6526 ? 'center 18%' : 'center center'
   };
 });
 const instagramProfileUrl = 'https://www.instagram.com/imbyfest/';
@@ -194,26 +196,7 @@ function App() {
         </div>
       </div>
       <div className={"body-container"}>
-        <div className="body-item hero-panel" style={{backgroundColor: "hsla(211.11,100%,10.59%,1)", gridArea: "box-1"}}>
-          <svg className="hero-scenery" viewBox="0 0 600 180" aria-hidden="true" focusable="false">
-            <circle className="hero-scenery-sun" cx="505" cy="42" r="23" />
-            <path className="hero-scenery-line" d="M0 145 C95 112 145 132 220 112 C295 92 338 125 410 104 C480 84 535 104 600 78" />
-            <path className="hero-scenery-line hero-scenery-horizon" d="M0 160 C115 143 178 158 275 145 C376 132 460 146 600 126" />
-            <path className="hero-scenery-line hero-scenery-tree-trunk" d="M72 145 V104 M66 145 H78 M72 119 L55 105 M72 126 L89 111" />
-            <path className="hero-scenery-line hero-scenery-tree-canopy" d="M72 108 C52 108 41 98 47 86 C38 76 48 62 62 64 C65 47 83 44 91 58 C106 54 116 68 108 79 C116 91 104 106 90 103 C84 109 77 110 72 108 Z" />
-            <path className="hero-scenery-line hero-scenery-tree-detail" d="M52 85 C64 80 78 81 91 73 M61 97 C74 91 87 92 101 86" />
-            <path className="hero-scenery-line hero-scenery-tree-trunk" d="M548 127 V88 M542 127 H554 M548 101 L531 88 M548 108 L565 94" />
-            <path className="hero-scenery-line hero-scenery-tree-canopy" d="M548 91 C529 92 517 82 522 70 C514 59 523 46 537 48 C539 32 557 29 566 43 C580 39 591 53 584 64 C593 76 581 90 567 87 C562 93 554 94 548 91 Z" />
-            <path className="hero-scenery-line hero-scenery-tree-detail" d="M527 70 C540 65 553 67 568 58 M536 82 C548 76 562 78 578 72" />
-            <path className="hero-scenery-line hero-scenery-grass" d="M18 164 C20 153 22 149 24 144 M24 164 C28 155 32 151 36 148 M112 164 C114 154 118 149 123 145 M120 164 C125 155 130 152 136 150 M575 145 C579 137 583 133 588 130 M584 145 C590 139 594 137 599 137" />
-            <path className="hero-scenery-line hero-scenery-birds" d="M415 48 Q423 41 431 48 Q439 41 447 48 M458 62 Q464 57 470 62 Q476 57 482 62" />
-          </svg>
-          <div className="hero-kicker">In My Backyard Festival</div>
-          <div className="body-item-content hero-title">DISCOVER GREAT MUSIC IN THE GREAT OUTDOORS</div>
-          <div className="body-item-content hero-subtitle">Izaak Walton League | Gaithersburg, Maryland</div>
-          <div className="body-item-content hero-date">October 17-18, 2026</div>
-          <button className="hero-ticket-button" type="button" onClick={() => openSection('tickets')}>Get Tickets <span aria-hidden="true">↗</span></button>
-        </div> 
+        <img className="home-poster" src={posterImage} alt="IMBY festival poster" />
         <button className="body-item image-card" type="button" style={{gridArea: "box-3"}} onClick={() => openSection('music')}>
           <img src={lineup} className="image-card-photo" alt="2026 lineup" />
           <div className="body-item-content">
