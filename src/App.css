@@ -489,7 +489,7 @@
   display:grid;
   z-index: 0;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto 300px 200px 200px 320px;
+  grid-template-rows: auto 300px 200px 200px auto;
   grid-template-areas:
   "box-1 box-1 box-1 box-1 box-1 box-1"
   "box-3 box-3 box-4 box-4 box-5 box-5"
@@ -501,7 +501,7 @@
 @media (max-width: 650px) {
   .body-container {
     grid-template-columns: 1fr;
-    grid-template-rows: 400px 200px 200px 200px 200px 200px 200px 360px;
+    grid-template-rows: 400px 200px 200px 200px 200px 200px 200px auto;
     grid-template-areas:
       "box-1"
       "box-3"
@@ -934,26 +934,35 @@
   transform: scale(1.25);
 }
 
-.instagram-profile-panel {
-  gap: 0.65rem;
-  background: linear-gradient(135deg, #174d5c, #235b4e);
-  color: #fffdf8;
-  text-align: center;
+.body-item.instagram-profile-panel {
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  overflow: visible;
+  background: #f8f4ed;
+  color: #0b2640;
 }
 
-.instagram-profile-mark {
-  display: grid;
-  place-items: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  border: 2px solid #e7b65a;
-  border-radius: 1rem;
-  color: #e7b65a;
-  font-size: 2.6rem;
-  line-height: 1;
+.instagram-feed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(100%, 540px);
+  margin: 0 auto;
+}
+
+.instagram-feed-eyebrow {
+  color: #607080;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .instagram-profile-title {
+  margin: 0.2rem 0 0;
   font: 700 1.4rem Georgia, 'Times New Roman', serif;
 }
 
@@ -961,22 +970,32 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  margin-top: 0.25rem;
-  padding: 0.75rem 1rem;
-  border: 1px solid #e7b65a;
-  border-radius: 999px;
-  background: #e7b65a;
-  color: #102d2a;
-  font: 800 0.8rem 'Trebuchet MS', sans-serif;
-  letter-spacing: 0.04em;
+  flex: 0 0 auto;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #b64d2b;
+  border-radius: 4px;
+  background: #b64d2b;
+  color: #fffdf8;
+  font: 800 0.75rem 'Trebuchet MS', sans-serif;
   text-decoration: none;
   text-transform: uppercase;
   transition: transform 180ms ease, background-color 180ms ease;
 }
 
+.instagram-profile-panel #curator-feed-default-feed-layout {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.instagram-profile-panel iframe {
+  max-width: 100% !important;
+}
+
 .instagram-profile-button:hover,
 .instagram-profile-button:focus-visible {
-  background: #f2cb76;
+  background: #963b20;
   transform: translateY(-2px);
 }
 .body-item {
@@ -1444,4 +1463,10 @@
   .instagram-carousel-stage {
     gap: 0.5rem;
   }
+}
+
+.instagram-profile-panel .crt-widget-mosaic {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
 }

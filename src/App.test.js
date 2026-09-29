@@ -25,3 +25,15 @@ test('shows a total for the camping and parking request including donation', () 
 
   expect(screen.getByText('Total: $90.00')).toBeInTheDocument();
 });
+
+test('loads the Curator feed on the homepage', () => {
+  render(<App />);
+
+  expect(document.getElementById('curator-feed-default-feed-layout')).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Powered by Curator.io' })).toHaveAttribute(
+    'href',
+    'https://curator.io'
+  );
+  expect(document.querySelector('script[src="https://cdn.curator.io/published/c43de2a3-a239-4a01-a493-bbb894eb4cd5.js"]'))
+    .toBeInTheDocument();
+});

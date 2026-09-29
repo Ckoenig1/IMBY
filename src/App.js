@@ -40,6 +40,35 @@ const homepageSlides = slideshowContext.keys()
   });
 const instagramProfileUrl = 'https://www.instagram.com/imbyfest/';
 
+function InstagramFeed() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.charset = 'UTF-8';
+    script.src = 'https://cdn.curator.io/published/c43de2a3-a239-4a01-a493-bbb894eb4cd5.js';
+    document.body.appendChild(script);
+
+    return () => script.remove();
+  }, []);
+
+  return (
+    <div className="body-item instagram-profile-panel" style={{gridArea: "box-10"}}>
+      <div className="instagram-feed-header">
+        <div>
+          <div className="instagram-feed-eyebrow">From the festival</div>
+          <h2 className="instagram-profile-title">@imbyfest</h2>
+        </div>
+        <a className="instagram-profile-button" href={instagramProfileUrl} target="_blank" rel="noreferrer">
+          Follow on Instagram <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div id="curator-feed-default-feed-layout">
+        <a href="https://curator.io" target="_blank" rel="noreferrer" className="crt-logo crt-tag">Powered by Curator.io</a>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [open, setOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState("None");
@@ -243,13 +272,7 @@ function App() {
             <a className="payment-link payment-link-cashapp" href="https://cash.app/$IMBYFEST" target="_blank" rel="noreferrer"><span className="payment-brand-mark" aria-hidden="true">$</span>Cash App $IMBYFEST</a>
           </div>
         </div>
-        <div className="body-item instagram-profile-panel" style={{gridArea: "box-10"}}>
-          <div className="instagram-profile-mark" aria-hidden="true">◎</div>
-          <div className="instagram-profile-title">@imbyfest</div>
-          <a className="instagram-profile-button" href={instagramProfileUrl} target="_blank" rel="noreferrer">
-            Follow us on Instagram <span aria-hidden="true">↗</span>
-          </a>
-        </div> 
+        <InstagramFeed />
       </div>
       </>}
     </div>
