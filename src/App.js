@@ -55,7 +55,6 @@ function InstagramFeed() {
     <div className="body-item instagram-profile-panel" style={{gridArea: "box-10"}}>
       <div className="instagram-feed-header">
         <div>
-          <div className="instagram-feed-eyebrow">From the festival</div>
           <h2 className="instagram-profile-title">@imbyfest</h2>
         </div>
         <a className="instagram-profile-button" href={instagramProfileUrl} target="_blank" rel="noreferrer">
