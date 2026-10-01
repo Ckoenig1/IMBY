@@ -1311,6 +1311,10 @@
 }
 
 .hotel-list { columns: 2; }
+.hotel-list > li {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
 
 .ticket-layout {
   display: grid;
