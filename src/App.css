@@ -125,7 +125,7 @@
   padding: 0.75rem;
   text-align: center;
   font-weight: 400;
-  font-family: "Archivo Black";
+  font-family: 'Shenandoah', sans-serif;
   line-height: 1.2em;
   font-size: 1.1rem;
   color: #0b2640;
@@ -340,7 +340,7 @@
     background: #fff;
     color: #102d2a;
     text-align: left;
-    font: 700 1rem Arial, sans-serif;
+    font: 700 1rem 'Shenandoah', sans-serif;
     cursor: pointer;
   }
 
@@ -632,14 +632,14 @@
 .hero-kicker {
   margin-bottom: 1rem;
   color: #e7b65a;
-  font: 700 0.8rem 'Trebuchet MS', sans-serif;
+  font: 700 0.8rem 'Shenandoah', sans-serif;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .hero-title {
   max-width: 720px;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Shenandoah', sans-serif;
   font-size: clamp(2rem, 5vw, 3.4rem);
   line-height: 1.02;
   letter-spacing: 0.02em;
@@ -649,7 +649,7 @@
 
 .hero-subtitle,
 .hero-date {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Shenandoah', sans-serif;
   font-size: 1rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -678,7 +678,7 @@
   border-radius: 999px;
   color: var(--imby-forest);
   background: var(--imby-gold);
-  font: 800 0.85rem 'Trebuchet MS', sans-serif;
+  font: 800 0.85rem 'Shenandoah', sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
@@ -699,7 +699,7 @@
   background: #b64d2b;
   color: #fffdf8;
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Shenandoah', sans-serif;
   font-size: 0.9rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -738,7 +738,7 @@
   border: 2px solid #fffdf8;
   background: #fffdf8;
   color: #b64d2b;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Shenandoah', sans-serif;
   font-size: 0.9rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -758,14 +758,14 @@
 .partiful-panel-copy {
   max-width: 28rem;
   margin: 0.75rem 0 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Shenandoah', sans-serif;
   font-size: 1rem;
   line-height: 1.5;
 }
 
 .support-panel-title {
   color: #f4e7c6;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Shenandoah', sans-serif;
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 700;
 }
@@ -777,7 +777,7 @@
   gap: 0.5rem 0.9rem;
   margin-top: 1rem;
   color: #f4e7c6;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Shenandoah', sans-serif;
   font-size: 0.85rem;
 }
 
@@ -814,13 +814,13 @@
 
 .payment-link-venmo {
   background: #008cff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Shenandoah', sans-serif;
 }
 
 .payment-link-cashapp {
   background: #00d64f;
   color: #071d12 !important;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Shenandoah', sans-serif;
 }
 
 .instagram-carousel {
@@ -963,7 +963,7 @@
 
 .instagram-profile-title {
   margin: 0.2rem 0 0;
-  font: 700 1.4rem Georgia, 'Times New Roman', serif;
+  font: 700 1.4rem 'Shenandoah', sans-serif;
 }
 
 .instagram-profile-button {
@@ -976,7 +976,7 @@
   border-radius: 4px;
   background: #b64d2b;
   color: #fffdf8;
-  font: 800 0.75rem 'Trebuchet MS', sans-serif;
+  font: 800 0.75rem 'Shenandoah', sans-serif;
   text-decoration: none;
   text-transform: uppercase;
   transition: transform 180ms ease, background-color 180ms ease;
@@ -1045,7 +1045,7 @@
 
 .image-card-kicker {
   color: #f4e7c6;
-  font: 700 0.7rem 'Trebuchet MS', sans-serif;
+  font: 700 0.7rem 'Shenandoah', sans-serif;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -1247,7 +1247,7 @@
 .section-heading p {
   margin: 0 0 1rem;
   color: #b64d2b;
-  font: 700 0.82rem Arial, sans-serif;
+  font: 700 0.82rem 'Shenandoah', sans-serif;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -1255,7 +1255,7 @@
 .section-heading h1 {
   margin: 0;
   color: #102d2a;
-  font: 700 clamp(2.5rem, 7vw, 5.8rem) Georgia, 'Times New Roman', serif;
+  font: 700 clamp(2.5rem, 7vw, 5.8rem) 'Shenandoah', sans-serif;
   line-height: 0.98;
   letter-spacing: -0.02em;
 }
@@ -1263,12 +1263,12 @@
 .section-heading div {
   max-width: 600px;
   margin: 1.7rem auto 0;
-  font: 1.2rem/1.6 Georgia, 'Times New Roman', serif;
+  font: 1.2rem/1.6 'Shenandoah', sans-serif;
 }
 
 .section-action-link {
   margin: 1rem 0 0;
-  font: 700 0.95rem Arial, sans-serif;
+  font: 700 0.95rem 'Shenandoah', sans-serif;
 }
 
 .section-action-link a {
@@ -1282,13 +1282,13 @@
   border-top: 6px solid #235b4e;
   background: #fffaf1;
   box-shadow: 12px 12px 0 #d8cdb8;
-  font: 1.05rem/1.7 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font: 1.05rem/1.7 'Shenandoah', sans-serif;
 }
 
 .section-copy h2 {
   margin: 2.4rem 0 0.6rem;
   color: #b64d2b;
-  font: 700 clamp(1.6rem, 3vw, 2.1rem) Georgia, 'Times New Roman', serif;
+  font: 700 clamp(1.6rem, 3vw, 2.1rem) 'Shenandoah', sans-serif;
 }
 
 .section-copy h2:first-child { margin-top: 0; }
@@ -1336,10 +1336,10 @@
   text-align: left;
 }
 
-.ticket-form h2 { margin: 0; font: 700 1.8rem Georgia, 'Times New Roman', serif; }
+.ticket-form h2 { margin: 0; font: 700 1.8rem 'Shenandoah', sans-serif; }
 .ticket-form p { margin: 0 0 0.5rem; color: #e8dfd0; line-height: 1.5; }
-.ticket-form label { display: flex; flex-direction: column; gap: 0.35rem; font: 700 0.82rem Arial, sans-serif; letter-spacing: 0.04em; text-transform: uppercase; }
-.ticket-form input, .ticket-form select { width: 100%; box-sizing: border-box; padding: 0.8rem; border: 1px solid rgba(216, 205, 184, 0.9); border-radius: 8px; color: #102d2a; background: #fffdf8; font: 1rem Arial, sans-serif; transition: border-color 180ms ease, box-shadow 180ms ease; }
+.ticket-form label { display: flex; flex-direction: column; gap: 0.35rem; font: 700 0.82rem 'Shenandoah', sans-serif; letter-spacing: 0.04em; text-transform: uppercase; }
+.ticket-form input, .ticket-form select { width: 100%; box-sizing: border-box; padding: 0.8rem; border: 1px solid rgba(216, 205, 184, 0.9); border-radius: 8px; color: #102d2a; background: #fffdf8; font: 1rem 'Shenandoah', sans-serif; transition: border-color 180ms ease, box-shadow 180ms ease; }
 .ticket-form input:focus, .ticket-form select:focus { outline: none; border-color: #b64d2b; box-shadow: 0 0 0 3px rgba(182, 77, 43, 0.16); }
 .form-total {
   margin-top: 0.25rem;
@@ -1379,7 +1379,7 @@
   font-weight: 600;
 }
 
-.form-submit { margin-top: 0.5rem; padding: 1rem 1.1rem; border: 0; border-radius: 8px; color: #fffdf8; background: #b64d2b; font: 700 0.85rem Arial, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 180ms ease, transform 180ms ease; }
+.form-submit { margin-top: 0.5rem; padding: 1rem 1.1rem; border: 0; border-radius: 8px; color: #fffdf8; background: #b64d2b; font: 700 0.85rem 'Shenandoah', sans-serif; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 180ms ease, transform 180ms ease; }
 .form-submit:hover { background: #d3663d; transform: translateY(-1px); }
 .form-submit:disabled { opacity: 0.65; cursor: wait; }
 .form-message { margin: 0 !important; font-weight: 700; }

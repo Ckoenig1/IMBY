@@ -1,6 +1,14 @@
+@font-face {
+  font-family: 'Shenandoah';
+  src: url('./assets/fonts/Shenandoah.otf') format('opentype');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
 body {
   margin: 0;
-  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font-family: 'Shenandoah', sans-serif;
   background: #f2eee5;
   color: #102d2a;
   -webkit-font-smoothing: antialiased;

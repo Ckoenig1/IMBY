@@ -26,6 +26,19 @@ test('shows a total for the camping and parking request including donation', () 
   expect(screen.getByText('Total: $90.00')).toBeInTheDocument();
 });
 
+test('camping and lodging homepage card opens tickets with nearby hotel information', () => {
+  render(<App />);
+
+  fireEvent.click(screen.getByRole('button', { name: /stay awhile/i }));
+
+  expect(screen.getByRole('heading', { name: 'Get Tickets' })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'Hotels' })).toBeInTheDocument();
+  expect(screen.queryByText('The Inn on Fox Meadow')).not.toBeInTheDocument();
+  expect(screen.queryByRole('link', { name: 'foxmeadow.us' })).not.toBeInTheDocument();
+  expect(screen.getByText('Holiday Inn Gaithersburg')).toBeInTheDocument();
+  expect(screen.getByText('Hampton Inn & Suites')).toBeInTheDocument();
+});
+
 test('loads the Curator feed on the homepage', () => {
   render(<App />);
 
