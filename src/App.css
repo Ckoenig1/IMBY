@@ -1355,7 +1355,6 @@
 }
 
 .music-sunday-note {
-  grid-column: 1 / -1;
   padding: 0.7rem 0 0.9rem;
   color: #52645a;
   font-size: 0.85rem;

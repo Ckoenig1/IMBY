@@ -299,16 +299,16 @@ function SectionView({ section }) {
           <div className="music-day">
             <p className="music-day-date">Saturday <time dateTime="2026-10-17">October 17</time></p>
             <p className="music-day-description">Gates open at 2:30 PM</p>
-            <p className="music-day-hours">3:30 PM <span aria-hidden="true">–</span> 11:00 PM</p>
             <p className="music-day-description">Live music</p>
+            <p className="music-day-hours">3:30 PM <span aria-hidden="true">–</span> 11:00 PM</p>
           </div>
           <div className="music-day">
             <p className="music-day-date">Sunday <time dateTime="2026-10-18">October 18</time></p>
             <p className="music-day-description">Activities start at 9:00 AM</p>
-            <p className="music-day-hours">12:00 PM <span aria-hidden="true">–</span> 4:00 PM</p>
             <p className="music-day-description">Live music</p>
+            <p className="music-day-hours">12:00 PM <span aria-hidden="true">–</span> 4:00 PM</p>
+            <p className="music-sunday-note">Festival grounds close Sunday at 5:00 PM.</p>
           </div>
-          <p className="music-sunday-note">Festival grounds close Sunday at 5:00 PM.</p>
         </section>
       </>
     },
