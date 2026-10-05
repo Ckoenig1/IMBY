@@ -1244,14 +1244,6 @@
   text-align: center;
 }
 
-.section-heading p {
-  margin: 0 0 1rem;
-  color: #b64d2b;
-  font: 700 0.82rem 'Shenandoah', sans-serif;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
 .section-heading h1 {
   margin: 0;
   color: #102d2a;

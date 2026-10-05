@@ -321,7 +321,7 @@ function SectionView({ section }) {
     involved: { eyebrow: 'Join the community', title: 'Get Involved', intro: 'IMBY is only as successful as the community we have, and we’d love to have you join that community.', body: <><h2>Volunteer at IMBY</h2><p>IMBY is only as successful as the community we have, and we’d love to have you join that community. You will be getting in at the ground floor, helping create an experience for everyone to enjoy for years to come. Linked above are the positions we will need help with both during the festival and leading up to it.</p><p>Each volunteer will receive a free commemorative patch for their participation as a thank you. Please sign up here: <a href="https://www.signupgenius.com/go/20F0D4EA9AC29ABFEC34-65580751-imby#/" target="_blank" rel="noreferrer">IMBY volunteer signup</a>.</p><p>If you aren’t able to volunteer but still want to help out, please donate via Venmo or Cash App to @IMBYFEST, or email <a href="mailto:contact@imbyfest.com">contact@imbyfest.com</a> with any questions. Can’t wait to see you In My Backyard!</p><h2>About IWL</h2><p>IMBY is hosted on the grounds of the <a href="https://sites.google.com/view/iwla-loisgreensligochapter/home?pli=1&authuser=0" target="_blank" rel="noreferrer">Lois Green Chapter of the Izaak Walton League</a>, a local conservation group dedicated to preserving and enjoying the outdoors. The League helps make this festival possible through their stewardship of the land and their support of community-centered outdoor gathering.</p></> }
   }[section];
 
-  return <main className="section-page"><header className="section-heading"><p>{content.eyebrow}</p><h1>{content.title}</h1><div>{content.intro}</div></header><article className="section-copy">{content.body}</article></main>;
+  return <main className="section-page"><header className="section-heading"><h1>{content.title}</h1><div>{content.intro}</div></header><article className="section-copy">{content.body}</article></main>;
 }
 
 function BuyTicketsView() {
@@ -375,7 +375,7 @@ function BuyTicketsView() {
   };
 
   return <main className="section-page ticket-page">
-    <header className="section-heading"><p>Reserve your spot</p><h1>Get Tickets</h1><div>Tickets to IMBY Fest are pay-what-you-can, so everyone can be part of the festival.</div></header>
+    <header className="section-heading"><h1>Get Tickets</h1><div>Tickets to IMBY Fest are pay-what-you-can, so everyone can be part of the festival.</div></header>
     <div className="ticket-layout">
       <article className="section-copy ticket-details">
         <h2>Pay what you can</h2>
