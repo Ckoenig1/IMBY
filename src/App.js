@@ -293,11 +293,23 @@ function SectionView({ section }) {
         <img
           className="lineup-poster"
           src={lineupPoster}
-          alt="2026 IMBY Fest lineup poster for October 17 and 18, featuring Ari Voxx, Doll Apartments, Kayla Rene, DJ Afrodelic, The Bad Thing, Cult Counselor, Down by Law, Joe Jowens, MRMRS, Niko Deneau, Orange Sunshine Band, Coco and the Coyotes, Hillary Gonzalez, Naomi, and Elvers the Clown."
+          alt="2026 IMBY Fest lineup poster."
         />
-        <p>Music will be starting at 3:30 on Saturday (10/17) and concluding at 11:00pm Saturday.</p>
-        <p>Sundays (10/18) lineup will start at 12:00 Noon and conclude at 4:00 Pm</p>
-        <p>We ask that the grounds be cleared no later than 5:00Pm on Sunday (10/18)</p>
+        <section className="music-schedule" aria-label="Music schedule">
+          <div className="music-day">
+            <p className="music-day-date">Saturday <time dateTime="2026-10-17">October 17</time></p>
+            <p className="music-day-description">Gates open at 2:30 PM</p>
+            <p className="music-day-hours">3:30 PM <span aria-hidden="true">–</span> 11:00 PM</p>
+            <p className="music-day-description">Live music</p>
+          </div>
+          <div className="music-day">
+            <p className="music-day-date">Sunday <time dateTime="2026-10-18">October 18</time></p>
+            <p className="music-day-description">Activities start at 9:00 AM</p>
+            <p className="music-day-hours">12:00 PM <span aria-hidden="true">–</span> 4:00 PM</p>
+            <p className="music-day-description">Live music</p>
+          </div>
+          <p className="music-sunday-note">Festival grounds close Sunday at 5:00 PM.</p>
+        </section>
       </>
     },
     camping: {

@@ -1303,6 +1303,64 @@
   margin: 0 auto 2rem;
 }
 
+.music-schedule {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 4px solid #235b4e;
+  border-bottom: 1px solid #b9ad98;
+}
+
+.music-day {
+  padding: 1.15rem 1.5rem 1.25rem 0;
+}
+
+.music-day + .music-day {
+  padding-right: 0;
+  padding-left: 1.5rem;
+  border-left: 1px solid #d8cdb8;
+}
+
+.music-day-date,
+.music-day-hours,
+.music-day-description,
+.music-sunday-note {
+  margin: 0;
+}
+
+.music-day-date {
+  color: #b64d2b;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.music-day-date time {
+  margin-left: 0.35rem;
+  color: #102d2a;
+}
+
+.music-day-hours {
+  margin-top: 0.4rem;
+  color: #102d2a;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.music-day-description {
+  margin-top: 0.25rem;
+  color: #52645a;
+  font-size: 0.9rem;
+}
+
+.music-sunday-note {
+  grid-column: 1 / -1;
+  padding: 0.7rem 0 0.9rem;
+  color: #52645a;
+  font-size: 0.85rem;
+}
+
 .stay-columns {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1402,6 +1460,10 @@
   .section-page { padding: 8rem 1.2rem 3rem; }
   .section-heading { margin-top: 3rem; }
   .section-copy { box-shadow: 6px 6px 0 #d8cdb8; font-size: 0.98rem; }
+  .music-schedule { grid-template-columns: 1fr; }
+  .music-day { padding: 0.9rem 0; }
+  .music-day + .music-day { padding-right: 0; padding-left: 0; border-top: 1px solid #d8cdb8; border-left: 0; }
+  .music-day-hours { font-size: 1.2rem; white-space: normal; }
   .stay-columns, .hotel-list { grid-template-columns: 1fr; columns: 1; }
   .ticket-layout { grid-template-columns: 1fr; }
   .ticket-form { position: static; box-shadow: 6px 6px 0 #b64d2b; }
