@@ -9,6 +9,7 @@ import logoTan from './assets/Logo Files/IMBY-Logo-Black-Negative_Logo-Negative-
 import logoTeal from './assets/Logo Files/IMBY-Logo-Black-Negative_Logo-Negative-Teal.png';
 import camping from './assets/camping.jpg';
 import lineup from './assets/lineup.jpg';
+import lineupPoster from './assets/lineupPoster.jpg';
 import volunteer from './assets/volunteer.jpeg';
 import posterImage from './assets/homepage-slideshow/Copy of imbyposter.png';
 import MenuItem from './components/menuItem';
@@ -289,10 +290,14 @@ function SectionView({ section }) {
       title: 'Music',
       intro: '',
       body: <>
+        <img
+          className="lineup-poster"
+          src={lineupPoster}
+          alt="2026 IMBY Fest lineup poster for October 17 and 18, featuring Ari Voxx, Doll Apartments, Kayla Rene, DJ Afrodelic, The Bad Thing, Cult Counselor, Down by Law, Joe Jowens, MRMRS, Niko Deneau, Orange Sunshine Band, Coco and the Coyotes, Hillary Gonzalez, Naomi, and Elvers the Clown."
+        />
         <p>Music will be starting at 3:30 on Saturday (10/17) and concluding at 11:00pm Saturday.</p>
         <p>Sundays (10/18) lineup will start at 12:00 Noon and conclude at 4:00 Pm</p>
         <p>We ask that the grounds be cleared no later than 5:00Pm on Sunday (10/18)</p>
-        <p><strong>Stay Tuned for the Lineup drop!</strong></p>
       </>
     },
     camping: {
@@ -362,7 +367,7 @@ function BuyTicketsView() {
     <div className="ticket-layout">
       <article className="section-copy ticket-details">
         <h2>Pay what you can</h2>
-        <p>Tickets to IMBY Fest are entirely pay-what-you-can donation based in order to let anyone and everyone be a part of the festival. We suggest a donation of <strong>$45 per person</strong> in order to properly compensate the artists, pay for utilities, and give back to our host venue. Every little bit you give will help IMBY grow to be bigger and better next year! Cash donations will also be accepted on site the day of the festival.</p>
+        <p>Tickets to IMBY Fest are entirely pay-what-you-can donation based in order to let anyone and everyone be a part of the festival. We suggest a donation of <strong>$45 per person</strong> in order to properly compensate the artists, pay for utilities, and give back to our host venue. Every little bit you give will help IMBY grow to be bigger and better next year! Donations can be made via <a href="https://venmo.com/u/IMBYFEST" target="_blank" rel="noreferrer">Venmo @IMBYFEST</a> or <a href="https://cash.app/$IMBYFEST" target="_blank" rel="noreferrer">Cash App $IMBYFEST</a>. Cash donations will also be accepted on site the day of the festival.</p>
         <h2>Parking and camping</h2>
         <p>In order to maximize space for activities, space for camping and parking is <strong>very limited</strong> and will cost <strong>$5 per car</strong> and <strong>$25 per campsite</strong>. Slots will fill up fast so we encourage you to purchase in advance.</p>
         <p>Please fill out the form with your name, email, desired camp sites and/or parking spaces and a Cash App or Venmo account. Once your form is processed, we will send you a payment request. Once your payment request has been fulfilled, your desired payment app will send you a confirmation email. <strong>PLEASE SAVE THIS EMAIL</strong> as it will serve as your proof of purchase. Do not accept payment requests from any account other than IMBYFEST as we are not responsible for online impersonators or fraudsters.</p>
